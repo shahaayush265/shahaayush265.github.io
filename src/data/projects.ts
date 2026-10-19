@@ -14,9 +14,10 @@
  * - highlights: 2-3 bullet highlights
  * - githubUrl: full GitHub repository URL
  * - liveUrl?: optional live demo link
+ * - liveUrlLabel?: label for the live demo button (e.g. "Live Demo", "v1.0.0 Downloads")
  * - stars?: stargazers count or badge
  * - featured: boolean (true = shown on top/hero bento grid)
- * - iconName: 'Flame' | 'Atom' | 'Terminal' | 'Cpu' | 'Play' | 'Code' | 'Globe' | 'Compass'
+ * - iconName: 'Flame' | 'Atom' | 'Terminal' | 'Cpu' | 'Play' | 'Code' | 'Globe' | 'Layers'
  */
 
 export interface Project {
@@ -29,6 +30,7 @@ export interface Project {
   highlights: string[];
   githubUrl: string;
   liveUrl?: string;
+  liveUrlLabel?: string;
   stars?: number;
   featured: boolean;
   iconName: 'Flame' | 'Atom' | 'Terminal' | 'Cpu' | 'Play' | 'Code' | 'Globe' | 'Layers';
@@ -49,6 +51,8 @@ export const PROJECTS: Project[] = [
       'Engineered for libvlc bindings, HDR tone mapping, and P2P watch party support'
     ],
     githubUrl: 'https://github.com/shahaayush265/vlcreborn',
+    liveUrl: 'https://github.com/shahaayush265/vlcreborn/releases/tag/v1.0.0',
+    liveUrlLabel: 'v1.0.0 Downloads',
     featured: true,
     iconName: 'Play',
     metrics: [
@@ -69,7 +73,8 @@ export const PROJECTS: Project[] = [
       'Web-based code editor tailored for physics educators and competitive JEE exam prep'
     ],
     githubUrl: 'https://github.com/shahaayush265/mechtex',
-    liveUrl: 'https://shahaayush265.github.io/mechtex-live',
+    liveUrl: 'https://shahaayush265.github.io/mechtex-live/',
+    liveUrlLabel: 'Live Web Editor',
     featured: true,
     iconName: 'Atom',
     metrics: [
@@ -90,6 +95,8 @@ export const PROJECTS: Project[] = [
       'Custom .motion experimental file format for saving and replaying physical experiments'
     ],
     githubUrl: 'https://github.com/shahaayush265/pendula',
+    liveUrl: 'https://shahaayush265.github.io/pendula/',
+    liveUrlLabel: 'Live Visualizer',
     stars: 1,
     featured: true,
     iconName: 'Cpu',
@@ -111,12 +118,32 @@ export const PROJECTS: Project[] = [
       'Extended with unified dispatcher CLI and multi-agent coordination support'
     ],
     githubUrl: 'https://github.com/shahaayush265/replica-agnostic',
+    liveUrl: 'https://github.com/shahaayush265/replica-agnostic#readme',
+    liveUrlLabel: 'Documentation & Specs',
     featured: true,
     iconName: 'Terminal',
     metrics: [
       { label: 'Tools', value: '9 Python CLI Engines' },
       { label: 'Standard', value: 'Clean-room Protocol' }
     ]
+  },
+  {
+    id: 'smarter_api',
+    title: 'Smarter API',
+    tagline: 'Network address discovery & TOTP security generator',
+    description: 'A focused Node.js backend utility providing resilient public IP resolution across multi-interface network adapters, paired with time-based one-time password (TOTP) generation.',
+    category: 'Tools & Dev',
+    techStack: ['Node.js', 'Axios', 'TOTP', 'Network Security', 'TypeScript'],
+    highlights: [
+      'Dual-stack public and external IP detection with fallback mechanisms',
+      'Built-in RFC 6238 compliant TOTP key generation for two-factor workflows',
+      'Lightweight, dependency-focused microservice architecture'
+    ],
+    githubUrl: 'https://github.com/shahaayush265/smarter_api',
+    liveUrl: 'https://github.com/shahaayush265/smarter_api#readme',
+    liveUrlLabel: 'API Reference',
+    featured: false,
+    iconName: 'Code'
   },
   {
     id: 'iftp',
@@ -131,6 +158,8 @@ export const PROJECTS: Project[] = [
       'Lightweight and dependency-free execution'
     ],
     githubUrl: 'https://github.com/shahaayush265/iftp',
+    liveUrl: 'https://github.com/shahaayush265/iftp#readme',
+    liveUrlLabel: 'Script Reference',
     featured: false,
     iconName: 'Layers'
   }

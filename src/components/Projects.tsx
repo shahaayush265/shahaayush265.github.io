@@ -161,7 +161,7 @@ export const Projects: React.FC = () => {
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-2.5">
                     <a
                       href={project.githubUrl}
                       target="_blank"
@@ -169,7 +169,7 @@ export const Projects: React.FC = () => {
                       className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-slate-200 hover:text-white px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
                     >
                       <Github className="w-3.5 h-3.5" />
-                      <span>Code Repository</span>
+                      <span>Repository</span>
                     </a>
 
                     {project.liveUrl && (
@@ -177,9 +177,9 @@ export const Projects: React.FC = () => {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-medium text-cyan-300 hover:text-cyan-200 px-3 py-1.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/20 transition-colors ml-auto"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium text-cyan-300 hover:text-cyan-200 px-3.5 py-1.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/25 transition-all ml-auto hover:scale-[1.02]"
                       >
-                        <span>Live Demo</span>
+                        <span>{project.liveUrlLabel || 'Live Demo'}</span>
                         <ExternalLink className="w-3.5 h-3.5" />
                       </a>
                     )}
