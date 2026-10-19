@@ -129,21 +129,25 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'smarter_api',
-    title: 'Smarter API',
-    tagline: 'Network address discovery & TOTP security generator',
-    description: 'A focused Node.js backend utility providing resilient public IP resolution across multi-interface network adapters, paired with time-based one-time password (TOTP) generation.',
+    title: 'SmarterAPI',
+    tagline: 'High-performance Node.js wrapper for Angel One SmartAPI',
+    description: 'A developer-friendly Node.js client library published on npm for the Angel One SmartAPI algorithmic trading platform. Features automated 2FA TOTP generation, persistent HTTP keep-alive connection pooling, automatic client IP detection, and resilient exponential backoff for order execution and live market data.',
     category: 'Tools & Dev',
-    techStack: ['Node.js', 'Axios', 'TOTP', 'Network Security', 'TypeScript'],
+    techStack: ['Node.js', 'npm Package', 'REST API', 'TOTP 2FA', 'Algorithmic Trading', 'Axios'],
     highlights: [
-      'Dual-stack public and external IP detection with fallback mechanisms',
-      'Built-in RFC 6238 compliant TOTP key generation for two-factor workflows',
-      'Lightweight, dependency-focused microservice architecture'
+      'Automated RFC 6238 TOTP authentication and session token lifecycle',
+      'Persistent HTTP keep-alive connection pooling with automatic ECONNRESET retry backoff',
+      'Full algorithmic trading coverage: order placement, portfolio holdings, RMS limits, and real-time LTP quotes'
     ],
     githubUrl: 'https://github.com/shahaayush265/smarter_api',
-    liveUrl: 'https://github.com/shahaayush265/smarter_api#readme',
-    liveUrlLabel: 'API Reference',
-    featured: false,
-    iconName: 'Code'
+    liveUrl: 'https://www.npmjs.com/package/smarter_api',
+    liveUrlLabel: 'npm Package (v11.0.0)',
+    featured: true,
+    iconName: 'Code',
+    metrics: [
+      { label: 'Registry', value: 'npm (v11.0.0)' },
+      { label: 'Domain', value: 'FinTech / Trading' }
+    ]
   },
   {
     id: 'iftp',
