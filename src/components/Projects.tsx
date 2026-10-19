@@ -49,23 +49,21 @@ export const Projects: React.FC = () => {
             </p>
           </div>
 
-          {/* Category Filter Pills (clean single-row scroll on mobile, inline on desktop) */}
-          <div className="w-full md:w-auto overflow-x-auto no-scrollbar py-1 self-start md:self-auto">
-            <div className="inline-flex items-center gap-1.5 p-1.5 rounded-2xl bg-dark-900/90 border border-white/10 backdrop-blur-md min-w-max">
-              {CATEGORIES.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all whitespace-nowrap flex-shrink-0 ${
-                    activeCategory === cat
-                      ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30 font-semibold'
-                      : 'text-slate-400 hover:text-white hover:bg-white/5'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
+          {/* Category Filter Pills */}
+          <div className="w-full lg:w-auto flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl bg-dark-900/90 border border-white/10 backdrop-blur-md self-start lg:self-auto">
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all ${
+                  activeCategory === cat
+                    ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30 font-semibold'
+                    : 'text-slate-400 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
         </div>
 
