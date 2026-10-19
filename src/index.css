@@ -21,6 +21,15 @@
   background: #2d374d;
 }
 
+/* Hide scrollbar for clean horizontal tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Background Grids and Glassmorphism */
 .bg-grid-pattern {
   background-image: 
