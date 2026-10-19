@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Github, Terminal, MapPin, Award, BookOpen } from 'lucide-react';
+import { ArrowRight, Github, Terminal, MapPin, Trophy, BookOpen } from 'lucide-react';
 import { PERSONAL_DATA } from '../data/personal';
 import { PhysicsVisualizer } from './PhysicsVisualizer';
 
@@ -81,16 +81,23 @@ export const Hero: React.FC = () => {
 
             {/* Quick Stats Bento Row */}
             <div className="grid grid-cols-2 gap-3">
-              <div className="p-4 rounded-2xl bg-dark-900/60 border border-white/10 backdrop-blur-md flex flex-col justify-between">
+              <a
+                href="#achievements"
+                className="p-4 rounded-2xl bg-dark-900/60 border border-white/10 hover:border-amber-400/30 backdrop-blur-md flex flex-col justify-between transition-colors group"
+              >
                 <div className="flex items-center justify-between text-xs text-slate-400">
-                  <span className="font-mono">CBSE 10th</span>
-                  <Award className="w-3.5 h-3.5 text-amber-400" />
+                  <span className="font-mono">Achievements</span>
+                  <Trophy className="w-3.5 h-3.5 text-amber-400 group-hover:scale-110 transition-transform" />
                 </div>
                 <div className="mt-2">
-                  <span className="text-2xl font-extrabold text-white">98.8%</span>
-                  <p className="text-[11px] text-slate-400 mt-0.5">Shantiniketan School</p>
+                  <span className="text-xl sm:text-2xl font-extrabold text-white group-hover:text-amber-300 transition-colors">
+                    Honors
+                  </span>
+                  <p className="text-[11px] text-slate-400 mt-0.5">
+                    98.8% CBSE &bull; Green Belt
+                  </p>
                 </div>
-              </div>
+              </a>
 
               <div className="p-4 rounded-2xl bg-dark-900/60 border border-white/10 backdrop-blur-md flex flex-col justify-between">
                 <div className="flex items-center justify-between text-xs text-slate-400">
@@ -98,7 +105,7 @@ export const Hero: React.FC = () => {
                   <BookOpen className="w-3.5 h-3.5 text-cyan-400" />
                 </div>
                 <div className="mt-2">
-                  <span className="text-2xl font-extrabold text-white">JEE 2027</span>
+                  <span className="text-xl sm:text-2xl font-extrabold text-white">JEE 2027</span>
                   <p className="text-[11px] text-slate-400 mt-0.5">Bakliwal Tutorials</p>
                 </div>
               </div>

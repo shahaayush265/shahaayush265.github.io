@@ -14,6 +14,18 @@ export interface SkillCategory {
   skills: { name: string; level?: string; iconColor?: string }[];
 }
 
+export interface Achievement {
+  id: string;
+  title: string;
+  metric: string;
+  category: 'Academics' | 'Martial Arts' | 'Engineering' | 'Logic';
+  organization: string;
+  year?: string;
+  description: string;
+  highlightBadge?: string;
+  iconName: 'Trophy' | 'Award' | 'GraduationCap' | 'Shield' | 'Code' | 'Atom';
+}
+
 export interface Hobby {
   id: string;
   title: string;
@@ -60,6 +72,49 @@ export const PERSONAL_DATA = {
       skillsOrFocus: ["Academic Excellence", "STEM Foundations", "Competitive Academics"]
     }
   ] as EducationItem[],
+
+  achievements: [
+    {
+      id: "cbse-10th",
+      title: "Class 10 CBSE Board Examinations",
+      metric: "98.8%",
+      category: "Academics",
+      organization: "Shantiniketan School, Kolhapur",
+      highlightBadge: "Top Academic Honors",
+      description: "Secured an exceptional 98.8% in the Class 10 CBSE All India Secondary School Examination, demonstrating high academic rigor and solid foundations across Mathematics and Science.",
+      iconName: "Award"
+    },
+    {
+      id: "karate-green-belt",
+      title: "Karate Green Belt Certification",
+      metric: "Green Belt Rank",
+      category: "Martial Arts",
+      organization: "Martial Arts Academy",
+      highlightBadge: "Discipline & Form",
+      description: "Achieved the Green Belt rank in Karate through rigorous testing of kata forms, endurance, physical conditioning, and mental composure under high pressure.",
+      iconName: "Shield"
+    },
+    {
+      id: "jee-prep-selection",
+      title: "Intensive JEE Advanced Preparation",
+      metric: "Target 2027",
+      category: "Academics",
+      organization: "Bakliwal Tutorials, Pune",
+      highlightBadge: "Advanced STEM",
+      description: "Enrolled in high-level competitive training in Pune focusing on Newtonian mechanics, electrodynamics, calculus, coordinate geometry, and advanced chemical sciences.",
+      iconName: "GraduationCap"
+    },
+    {
+      id: "open-source-software",
+      title: "Open Source Systems Engineering",
+      metric: "4+ Systems Built",
+      category: "Engineering",
+      organization: "Independent Open Source",
+      highlightBadge: "Systems Craftsmanship",
+      description: "Architected and published cross-platform desktop applications (VLC Reborn in Tauri v2 & Rust), a domain-specific mechanics diagram markup language (MechTeX), and simulated annealing physics visualizers (Pendula).",
+      iconName: "Code"
+    }
+  ] as Achievement[],
 
   skillCategories: [
     {
