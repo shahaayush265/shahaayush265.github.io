@@ -41,7 +41,7 @@ export const PERSONAL_DATA = {
   headline: "Building high-performance software, modeling physical systems, and mastering deep problem-solving.",
   bio: "I am a self-taught full-stack developer and rigorous problem solver currently in Pune preparing for JEE 2027 at Bakliwal Tutorials. My passion bridges the gap between deep theoretical sciences—physics, mathematics, and numerical algorithms—and production-grade software craftsmanship. When I am not solving advanced mechanics or calculus problems, I architect cross-platform desktop applications in Rust and Tauri, develop domain-specific languages, and design responsive web experiences.",
   location: "Pune, India",
-  email: "shahaaayush265@gmail.com",
+  email: "shahaayush265@gmail.com",
   github: "https://github.com/shahaayush265",
   githubUsername: "shahaayush265",
   status: "Balancing JEE 2027 Prep & Open Source Engineering",
@@ -58,7 +58,7 @@ export const PERSONAL_DATA = {
       institution: "Bakliwal Tutorials",
       location: "Pune, Maharashtra",
       degree: "JEE Advanced 2027 Preparation",
-      duration: "2024 - Present (Targeting 2027)",
+      duration: "2025 - Present (Targeting 2027)",
       description: "Undergoing intensive advanced training in Physics (Newtonian Mechanics, Electrodynamics, Modern Physics), Advanced Mathematics (Calculus, Coordinate Geometry, Vectors & Probability), and Chemistry.",
       skillsOrFocus: ["Rigorous Analytical Thinking", "Mathematical Olympiad Problem Solving", "Physics Modeling"]
     },
@@ -191,8 +191,8 @@ export const PERSONAL_DATA = {
       title: "Fiction Reading",
       icon: "BookOpen",
       badge: "Imagination",
-      description: "Avid reader of worldbuilding fiction, mystery, and gripping narratives.",
-      details: "A great counterbalance to heavy STEM study, unlocking creative perspectives and fresh ideas."
+      description: "Avid reader of fantasy and mythological fiction, captivated by grand worldbuilding and legendary epics.",
+      details: "A great counterbalance to heavy STEM study, unlocking creative perspectives and legendary storytelling."
     },
     {
       id: "karate",

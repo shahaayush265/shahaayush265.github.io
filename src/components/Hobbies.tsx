@@ -95,9 +95,9 @@ export const Hobbies: React.FC = () => {
               </p>
 
               <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 space-y-1.5">
-                <div className="text-[11px] font-mono text-slate-400 uppercase">Current Themes</div>
-                <div className="text-xs font-medium text-slate-200">
-                  Sci-Fi, Speculative Worlds & Philosophical Mystery
+                <div className="text-[11px] font-mono text-slate-400 uppercase">Favorite Genres</div>
+                <div className="text-xs font-semibold text-indigo-300">
+                  Fantasy & Mythological Fiction
                 </div>
               </div>
             </div>
