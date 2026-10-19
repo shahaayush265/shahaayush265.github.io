@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, BookOpen, Shield, Atom } from 'lucide-react';
+import { Heart, BookOpen, Shield, Atom, Palette, Sparkles } from 'lucide-react';
 import { ChessInteractive } from './ChessInteractive';
 import { RubiksCube } from './RubiksCube';
 
@@ -18,28 +18,28 @@ export const Hobbies: React.FC = () => {
             Hobbies & Passions
           </h2>
           <p className="text-slate-400 text-sm mt-2 max-w-xl">
-            Where curiosity thrives: tactical chess battles, spatial Rubik's algorithms, fiction worldbuilding, and martial arts discipline.
+            Where curiosity thrives: tactical chess battles, spatial Rubik's algorithms, acrylic canvas painting, fiction worldbuilding, and martial discipline.
           </p>
         </div>
 
-        {/* Bento Grid layout for Hobbies */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
-          
-          {/* Card 1: Full 8x8 Interactive Chess Lab (col-span-12) */}
-          <div className="col-span-12 flex flex-col">
-            <ChessInteractive />
-          </div>
+        {/* 1. Full 8x8 Interactive Chess Lab (Full Width) */}
+        <div className="mb-6">
+          <ChessInteractive />
+        </div>
 
-          {/* Card 2: 3D Rubik's Cube & Spatial Algorithms (md:col-span-6 lg:col-span-3) */}
-          <div className="md:col-span-6 lg:col-span-3 flex flex-col">
+        {/* 2. Symmetrical 3-Column Bento Grid for Remaining Passions */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+          
+          {/* Card 1: 3D Rubik's Cube & Spatial Algorithms */}
+          <div className="flex flex-col">
             <RubiksCube />
           </div>
 
-          {/* Card 3: Physics, Math & Deep Logic Problems (md:col-span-6 lg:col-span-3) */}
-          <div className="md:col-span-6 lg:col-span-3 p-6 rounded-3xl bg-dark-900/70 border border-white/10 backdrop-blur-xl flex flex-col justify-between group hover:border-cyan-500/30 transition-all">
+          {/* Card 2: Physics, Math & Deep Logic Problems */}
+          <div className="p-6 rounded-3xl bg-dark-900/70 border border-white/10 backdrop-blur-xl flex flex-col justify-between group hover:border-cyan-500/30 transition-all">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <div className="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+                <div className="w-10 h-10 min-w-[40px] min-h-[40px] aspect-square rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
                   <Atom className="w-5 h-5" />
                 </div>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">
@@ -48,10 +48,10 @@ export const Hobbies: React.FC = () => {
               </div>
 
               <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
-                Physics & Logic
+                Physics & Logic Problems
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed mb-4">
-                Exploring Newtonian mechanics, wave kinematics, differential equations, and computational optimization.
+                Exploring Newtonian mechanics, wave kinematics, differential equations, and computational numerical optimization.
               </p>
 
               <div className="space-y-1.5 text-xs text-slate-400 font-mono">
@@ -75,11 +75,43 @@ export const Hobbies: React.FC = () => {
             </div>
           </div>
 
-          {/* Card 4: Fiction Reading & Bookshelf (md:col-span-6 lg:col-span-3) */}
-          <div className="md:col-span-6 lg:col-span-3 p-6 rounded-3xl bg-dark-900/70 border border-white/10 backdrop-blur-xl flex flex-col justify-between group hover:border-indigo-500/30 transition-all">
+          {/* Card 3: Acrylic Painting (NEW) */}
+          <div className="p-6 rounded-3xl bg-dark-900/70 border border-white/10 backdrop-blur-xl flex flex-col justify-between group hover:border-rose-500/30 transition-all">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <div className="w-10 h-10 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                <div className="w-10 h-10 min-w-[40px] min-h-[40px] aspect-square rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
+                  <Palette className="w-5 h-5" />
+                </div>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-rose-500/10 text-rose-300 border border-rose-500/20">
+                  Visual Arts
+                </span>
+              </div>
+
+              <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-rose-300 transition-colors">
+                Acrylic Painting
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                Working with color harmony, brush texture, and visual perspective on canvas using acrylic paints.
+              </p>
+
+              <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 space-y-1">
+                <div className="text-[10px] font-mono text-slate-400 uppercase">Artistic Style</div>
+                <div className="text-xs font-semibold text-rose-300">
+                  Vibrant Canvas, Textures & Perspective
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-5 pt-3 border-t border-white/10 text-[11px] font-mono text-rose-400">
+              Mindful creative balance to STEM equations
+            </div>
+          </div>
+
+          {/* Card 4: Fiction Reading & Bookshelf */}
+          <div className="p-6 rounded-3xl bg-dark-900/70 border border-white/10 backdrop-blur-xl flex flex-col justify-between group hover:border-indigo-500/30 transition-all">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-10 h-10 min-w-[40px] min-h-[40px] aspect-square rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
                   <BookOpen className="w-5 h-5" />
                 </div>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
@@ -91,7 +123,7 @@ export const Hobbies: React.FC = () => {
                 Fiction Reading
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed mb-4">
-                Immersing in rich narratives, speculative worldbuilding, and timeless fiction that stretches the boundaries of imagination.
+                Immersing in rich narratives, speculative worldbuilding, and legendary fiction that stretches the boundaries of imagination.
               </p>
 
               <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 space-y-1">
@@ -103,15 +135,15 @@ export const Hobbies: React.FC = () => {
             </div>
 
             <div className="mt-5 pt-3 border-t border-white/10 text-[11px] font-mono text-indigo-400">
-              Creative counterbalance to STEM study
+              Worldbuilding & legendary storytelling
             </div>
           </div>
 
-          {/* Card 5: Karate Green Belt & Martial Discipline (md:col-span-6 lg:col-span-3) */}
-          <div className="md:col-span-6 lg:col-span-3 p-6 rounded-3xl bg-dark-900/70 border border-white/10 backdrop-blur-xl flex flex-col justify-between group hover:border-emerald-500/30 transition-all">
+          {/* Card 5: Karate Green Belt & Martial Discipline */}
+          <div className="p-6 rounded-3xl bg-dark-900/70 border border-white/10 backdrop-blur-xl flex flex-col justify-between group hover:border-emerald-500/30 transition-all">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <div className="w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <div className="w-10 h-10 min-w-[40px] min-h-[40px] aspect-square rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
                   <Shield className="w-5 h-5" />
                 </div>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
@@ -132,7 +164,39 @@ export const Hobbies: React.FC = () => {
             </div>
 
             <div className="mt-5 pt-3 border-t border-white/10 text-[11px] font-mono text-slate-400">
-              Mindset & discipline remains
+              Discipline & perseverance
+            </div>
+          </div>
+
+          {/* Card 6: Creative Polymath Synthesis Card */}
+          <div className="p-6 rounded-3xl bg-gradient-to-br from-indigo-950/40 via-dark-900/80 to-cyan-950/40 border border-white/10 backdrop-blur-xl flex flex-col justify-between group hover:border-indigo-400/30 transition-all">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-10 h-10 min-w-[40px] min-h-[40px] aspect-square rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                  <Sparkles className="w-5 h-5" />
+                </div>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+                  Synthesis
+                </span>
+              </div>
+
+              <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                The Creative Synthesis
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                Whether formulating tactical chess combinations, analyzing physics oscillations, or painting canvases—divergent pursuits fuel first-principles engineering breakthroughs.
+              </p>
+
+              <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 space-y-1">
+                <div className="text-[10px] font-mono text-slate-400 uppercase">Core Philosophy</div>
+                <div className="text-xs font-semibold text-slate-200">
+                  Curiosity Unconstrained by Specialization
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-5 pt-3 border-t border-white/10 text-[11px] font-mono text-cyan-400">
+              Code &bull; Canvas &bull; Calculus &bull; Board
             </div>
           </div>
 

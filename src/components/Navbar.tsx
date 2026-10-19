@@ -25,20 +25,20 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 py-3 sm:py-4 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-4 py-3 sm:py-4 transition-all duration-300">
       <div
-        className={`max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-2.5 rounded-2xl transition-all duration-300 ${
+        className={`max-w-6xl mx-auto flex items-center justify-between px-3 sm:px-6 py-2.5 rounded-2xl transition-all duration-300 ${
           scrolled
-            ? 'bg-dark-900/85 backdrop-blur-md border border-white/10 shadow-2xl shadow-indigo-950/20'
-            : 'bg-dark-900/50 backdrop-blur-sm border border-white/5'
+            ? 'bg-dark-900/90 backdrop-blur-md border border-white/10 shadow-2xl shadow-indigo-950/20'
+            : 'bg-dark-900/60 backdrop-blur-sm border border-white/5'
         }`}
       >
         {/* Brand Monogram */}
         <a
           href="#about"
-          className="flex items-center gap-2.5 group"
+          className="flex items-center gap-2.5 group flex-shrink-0"
         >
-          <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-[1px] shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+          <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-[1px] shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform flex-shrink-0">
             <div className="w-full h-full bg-dark-950 rounded-[11px] flex items-center justify-center">
               <span className="font-mono font-bold text-sm bg-gradient-to-r from-indigo-300 to-cyan-200 bg-clip-text text-transparent">
                 AS
@@ -55,13 +55,13 @@ export const Navbar: React.FC = () => {
           </div>
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] rounded-xl px-2 py-1">
+        {/* Desktop Navigation - active on lg (>=1024px) to prevent 768-930px overflow */}
+        <nav className="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] rounded-xl px-2 py-1 flex-shrink-0">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-xs font-medium text-slate-300 hover:text-white px-3 py-1.5 rounded-lg hover:bg-white/5 transition-colors"
+              className="text-xs font-medium text-slate-300 hover:text-white px-2.5 py-1.5 rounded-lg hover:bg-white/5 transition-colors whitespace-nowrap"
             >
               {link.label}
             </a>
@@ -69,7 +69,7 @@ export const Navbar: React.FC = () => {
         </nav>
 
         {/* Quick Social & CTA */}
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden sm:flex items-center gap-2 sm:gap-3 flex-shrink-0">
           <a
             href={PERSONAL_DATA.github}
             target="_blank"
@@ -78,7 +78,7 @@ export const Navbar: React.FC = () => {
             title="View GitHub Profile"
           >
             <Github className="w-3.5 h-3.5" />
-            <span>GitHub</span>
+            <span className="hidden md:inline">GitHub</span>
           </a>
 
           <a
@@ -90,19 +90,19 @@ export const Navbar: React.FC = () => {
           </a>
         </div>
 
-        {/* Mobile menu toggle */}
+        {/* Mobile menu toggle - visible below lg (<1024px) */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 text-slate-400 hover:text-white rounded-lg bg-white/5 border border-white/10"
+          className="lg:hidden p-2 text-slate-400 hover:text-white rounded-lg bg-white/5 border border-white/10 transition-colors"
           aria-label="Toggle navigation"
         >
           {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile / Tablet Dropdown - active below lg */}
       {mobileOpen && (
-        <div className="md:hidden mt-2 max-w-6xl mx-auto p-4 rounded-2xl bg-dark-900/95 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col gap-2">
+        <div className="lg:hidden mt-2 max-w-6xl mx-auto p-4 rounded-2xl bg-dark-900/95 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col gap-2 animate-fadeIn">
           {navLinks.map((link) => (
             <a
               key={link.label}

@@ -19,15 +19,22 @@ export const Hero: React.FC = () => {
             <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-indigo-500/10 via-cyan-500/5 to-transparent rounded-full blur-3xl pointer-events-none" />
 
             <div>
-              {/* Status pill */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs text-slate-300 mb-6 backdrop-blur-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <span className="font-mono text-[11px] sm:text-xs text-slate-200">
-                  JEE 2027 Aspirant &bull; Bakliwal Tutorials Pune
-                </span>
+              {/* Status pill & Pre-AI Age 12 Milestone */}
+              <div className="flex flex-wrap items-center gap-2 mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs text-slate-300 backdrop-blur-sm">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                  <span className="font-mono text-[11px] sm:text-xs text-slate-200">
+                    JEE 2027 Aspirant &bull; Bakliwal Tutorials
+                  </span>
+                </div>
+
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-300 text-[11px] font-mono">
+                  <Terminal className="w-3.5 h-3.5 text-indigo-400" />
+                  <span>Coding since 12 &bull; Pre-AI Era</span>
+                </div>
               </div>
 
               {/* Title / Headline */}
@@ -91,10 +98,10 @@ export const Hero: React.FC = () => {
                 </div>
                 <div className="mt-2">
                   <span className="text-xl sm:text-2xl font-extrabold text-white group-hover:text-amber-300 transition-colors">
-                    Honors
+                    8 Honors
                   </span>
                   <p className="text-[11px] text-slate-400 mt-0.5">
-                    98.8% CBSE &bull; Green Belt
+                    ZCO &bull; 98.8% CBSE &bull; ATL
                   </p>
                 </div>
               </a>
@@ -121,7 +128,7 @@ export const Hero: React.FC = () => {
                 <span className="text-[10px] text-cyan-400 font-mono">Self-Taught Stack</span>
               </div>
               <div className="flex flex-wrap gap-1.5">
-                {['React.js', 'Angular', 'Python', 'C++', 'SQL', 'Supabase', 'Tauri v2', 'TypeScript'].map(
+                {['C++', 'Python', 'React', 'Tauri v2', 'TypeScript', 'Kali Linux', 'Metasploit', 'Supabase'].map(
                   (tech) => (
                     <span
                       key={tech}
