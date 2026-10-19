@@ -25,18 +25,18 @@ export const Hobbies: React.FC = () => {
         {/* Bento Grid layout for Hobbies */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
           
-          {/* Card 1: Interactive Chess Lab (md:col-span-6 lg:col-span-6) */}
-          <div className="md:col-span-6 flex flex-col">
+          {/* Card 1: Full 8x8 Interactive Chess Lab (col-span-12) */}
+          <div className="col-span-12 flex flex-col">
             <ChessInteractive />
           </div>
 
-          {/* Card 2: 3D Rubik's Cube & Spatial Algorithms (md:col-span-6 lg:col-span-6) */}
-          <div className="md:col-span-6 flex flex-col">
+          {/* Card 2: 3D Rubik's Cube & Spatial Algorithms (md:col-span-6 lg:col-span-3) */}
+          <div className="md:col-span-6 lg:col-span-3 flex flex-col">
             <RubiksCube />
           </div>
 
-          {/* Card 3: Physics, Math & Deep Logic Problems (md:col-span-5) */}
-          <div className="md:col-span-5 p-6 rounded-3xl bg-dark-900/70 border border-white/10 backdrop-blur-xl flex flex-col justify-between group hover:border-cyan-500/30 transition-all">
+          {/* Card 3: Physics, Math & Deep Logic Problems (md:col-span-6 lg:col-span-3) */}
+          <div className="md:col-span-6 lg:col-span-3 p-6 rounded-3xl bg-dark-900/70 border border-white/10 backdrop-blur-xl flex flex-col justify-between group hover:border-cyan-500/30 transition-all">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
@@ -47,36 +47,36 @@ export const Hobbies: React.FC = () => {
                 </span>
               </div>
 
-              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
-                Physics, Math & Logic Puzzles
+              <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                Physics & Logic
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
-                Constantly exploring Newtonian mechanics, wave kinematics, differential equations, and computational optimization.
+              <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                Exploring Newtonian mechanics, wave kinematics, differential equations, and computational optimization.
               </p>
 
-              <div className="space-y-2 text-xs text-slate-400 font-mono">
-                <div className="flex items-center gap-2">
+              <div className="space-y-1.5 text-xs text-slate-400 font-mono">
+                <div className="flex items-center gap-1.5">
                   <span className="text-cyan-400">▸</span>
-                  <span>Kinematics & Harmonic Oscillators</span>
+                  <span>Harmonic Kinematics</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5">
                   <span className="text-cyan-400">▸</span>
-                  <span>Simulated Annealing & Heuristics</span>
+                  <span>Simulated Annealing</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5">
                   <span className="text-cyan-400">▸</span>
-                  <span>Formal DSLs for Mechanics Proofs</span>
+                  <span>Mechanics DSLs</span>
                 </div>
               </div>
             </div>
 
             <div className="mt-5 pt-3 border-t border-white/10 text-[11px] font-mono text-cyan-400">
-              Direct inspiration for Pendula & MechTeX
+              Inspiration for Pendula & MechTeX
             </div>
           </div>
 
-          {/* Card 4: Fiction Reading & Bookshelf (md:col-span-4) */}
-          <div className="md:col-span-4 p-6 rounded-3xl bg-dark-900/70 border border-white/10 backdrop-blur-xl flex flex-col justify-between group hover:border-indigo-500/30 transition-all">
+          {/* Card 4: Fiction Reading & Bookshelf (md:col-span-6 lg:col-span-3) */}
+          <div className="md:col-span-6 lg:col-span-3 p-6 rounded-3xl bg-dark-900/70 border border-white/10 backdrop-blur-xl flex flex-col justify-between group hover:border-indigo-500/30 transition-all">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="w-10 h-10 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
@@ -87,15 +87,15 @@ export const Hobbies: React.FC = () => {
                 </span>
               </div>
 
-              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">
                 Fiction Reading
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              <p className="text-xs text-slate-300 leading-relaxed mb-4">
                 Immersing in rich narratives, speculative worldbuilding, and timeless fiction that stretches the boundaries of imagination.
               </p>
 
-              <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 space-y-1.5">
-                <div className="text-[11px] font-mono text-slate-400 uppercase">Favorite Genres</div>
+              <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 space-y-1">
+                <div className="text-[10px] font-mono text-slate-400 uppercase">Favorite Genres</div>
                 <div className="text-xs font-semibold text-indigo-300">
                   Fantasy & Mythological Fiction
                 </div>
@@ -103,12 +103,12 @@ export const Hobbies: React.FC = () => {
             </div>
 
             <div className="mt-5 pt-3 border-t border-white/10 text-[11px] font-mono text-indigo-400">
-              Creative antidote to daily STEM equations
+              Creative counterbalance to STEM study
             </div>
           </div>
 
-          {/* Card 5: Karate Green Belt & Martial Discipline (md:col-span-3) */}
-          <div className="md:col-span-3 p-6 rounded-3xl bg-dark-900/70 border border-white/10 backdrop-blur-xl flex flex-col justify-between group hover:border-emerald-500/30 transition-all">
+          {/* Card 5: Karate Green Belt & Martial Discipline (md:col-span-6 lg:col-span-3) */}
+          <div className="md:col-span-6 lg:col-span-3 p-6 rounded-3xl bg-dark-900/70 border border-white/10 backdrop-blur-xl flex flex-col justify-between group hover:border-emerald-500/30 transition-all">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
@@ -119,10 +119,10 @@ export const Hobbies: React.FC = () => {
                 </span>
               </div>
 
-              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
                 Karate Martial Arts
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              <p className="text-xs text-slate-300 leading-relaxed mb-4">
                 Attained Green Belt rank. Practicing form, balance, and composed stillness under physical and mental pressure.
               </p>
 
@@ -132,7 +132,7 @@ export const Hobbies: React.FC = () => {
             </div>
 
             <div className="mt-5 pt-3 border-t border-white/10 text-[11px] font-mono text-slate-400">
-              Paused for JEE prep &bull; Mindset remains
+              Mindset & discipline remains
             </div>
           </div>
 
