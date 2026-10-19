@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Trophy, RotateCcw, Sparkles, Check, HelpCircle, Gamepad2 } from 'lucide-react';
+import { Trophy, RotateCcw, Sparkles, Check, HelpCircle, Gamepad2, Eye, EyeOff } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 // Vector SVG chess pieces
@@ -93,7 +93,6 @@ const INITIAL_POSITION: BoardState = {
   h7: { type: 'p', isWhite: false },
   c6: { type: 'n', isWhite: false },
   d6: { type: 'p', isWhite: false },
-  e6: { type: 'b', isWhite: false },
 
   // White attacking army
   c4: { type: 'q', isWhite: true },
@@ -171,6 +170,7 @@ export const ChessInteractive: React.FC = () => {
   const [feedbackType, setFeedbackType] = useState<'info' | 'success' | 'error'>('info');
   const [lastMoveSquares, setLastMoveSquares] = useState<string[]>(['g5', 'c4']);
   const [isCompleted, setIsCompleted] = useState<boolean>(false);
+  const [showMoves, setShowMoves] = useState<boolean>(false);
 
   // All 8 files and 8 ranks for full board rendering
   const files = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
@@ -181,6 +181,7 @@ export const ChessInteractive: React.FC = () => {
     setSelectedSquare(null);
     setPuzzleIndex(0);
     setIsCompleted(false);
+    setShowMoves(false);
     setLastMoveSquares(['g5', 'c4']);
     setFeedback(
       mode === 'puzzle'
@@ -451,26 +452,48 @@ export const ChessInteractive: React.FC = () => {
               <p>{feedback}</p>
             </div>
 
-            {/* Move List / Progression */}
+            {/* Move Sequence Hidden by default - Revealed only on user request */}
             {mode === 'puzzle' && (
-              <div className="space-y-1.5 mb-4 text-xs font-mono">
-                {PUZZLE_STEPS.map((step, idx) => (
-                  <div
-                    key={idx}
-                    className={`flex items-center justify-between px-3 py-1.5 rounded-lg border transition-colors ${
-                      idx < puzzleIndex || isCompleted
-                        ? 'bg-emerald-950/20 border-emerald-800/30 text-emerald-300'
-                        : idx === puzzleIndex
-                        ? 'bg-amber-500/10 border-amber-500/30 text-amber-200'
-                        : 'bg-white/[0.01] border-white/5 text-slate-400 opacity-60'
-                    }`}
-                  >
-                    <span>{step.whiteNotation} {step.blackNotation || ''}</span>
-                    <span className="text-[10px]">
-                      {idx < puzzleIndex || isCompleted ? '✓ played' : idx === puzzleIndex ? 'current' : 'pending'}
-                    </span>
+              <div className="mb-4">
+                <button
+                  type="button"
+                  onClick={() => setShowMoves(!showMoves)}
+                  className="w-full flex items-center justify-between px-3.5 py-2 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/10 text-xs font-mono text-slate-300 transition-colors"
+                >
+                  <span className="flex items-center gap-2">
+                    {showMoves ? (
+                      <EyeOff className="w-3.5 h-3.5 text-amber-400" />
+                    ) : (
+                      <Eye className="w-3.5 h-3.5 text-slate-400" />
+                    )}
+                    <span>{showMoves ? 'Hide Move Sequence' : 'Reveal Move Sequence'}</span>
+                  </span>
+                  <span className="text-[10px] uppercase tracking-wider text-slate-400 font-medium">
+                    {showMoves ? 'Shown' : 'Click to reveal'}
+                  </span>
+                </button>
+
+                {showMoves && (
+                  <div className="space-y-1.5 mt-2.5 text-xs font-mono">
+                    {PUZZLE_STEPS.map((step, idx) => (
+                      <div
+                        key={idx}
+                        className={`flex items-center justify-between px-3 py-1.5 rounded-lg border transition-colors ${
+                          idx < puzzleIndex || isCompleted
+                            ? 'bg-emerald-950/20 border-emerald-800/30 text-emerald-300'
+                            : idx === puzzleIndex
+                            ? 'bg-amber-500/10 border-amber-500/30 text-amber-200'
+                            : 'bg-white/[0.01] border-white/5 text-slate-400 opacity-60'
+                        }`}
+                      >
+                        <span>{step.whiteNotation} {step.blackNotation || ''}</span>
+                        <span className="text-[10px]">
+                          {idx < puzzleIndex || isCompleted ? '✓ played' : idx === puzzleIndex ? 'current' : `step ${idx + 1}`}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                )}
               </div>
             )}
 
